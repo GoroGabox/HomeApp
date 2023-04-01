@@ -1,0 +1,34 @@
+import { Canvas } from '@react-three/fiber';
+import { House } from './index';
+import React, { Suspense, useEffect, useState } from "react";
+import { OrbitControls, Preload, Sky } from "@react-three/drei";
+import CanvasLoader from "../Loader";
+
+function Scene({ancho, longitud, altura}) {
+  return (
+    <>
+      <Canvas
+        frameloop='demand'
+        shadows
+        dpr={[1, 2]}
+        camera={{ position: [20, 3, 5], fov: 35 }}
+        gl={{ preserveDrawingBuffer: true }}  
+      >
+        <Sky sunPosition={[100, 100, 20]} />
+        <ambientLight intensity={0.5} />
+        <Suspense fallback={<CanvasLoader />}>
+        <OrbitControls
+          enableZoom={true}
+          maxPolarAngle={Math.PI/2}
+          minPolarAngle={Math.PI/4}
+          />
+        <House  ancho={ancho} longitud={longitud} altura={altura}/>
+      </Suspense>
+
+      <Preload all />
+      </Canvas>
+    </>
+  );
+}
+
+export default Scene;
