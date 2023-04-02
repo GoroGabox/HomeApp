@@ -12,12 +12,6 @@ function Navbar() {
           Home
         </Link>
         <Link
-            to='/plans'
-            className='flex'
-        >
-          Plans
-        </Link>
-        <Link
             to='/calculator'
             className='flex'
         >

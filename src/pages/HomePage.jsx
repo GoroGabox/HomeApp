@@ -12,14 +12,16 @@ import {
 function HomePage() {
   return (
     <>
-      <div className='flex flex-col items-center text-white bg-secondaryLight h-screen md:h-[90vh] w-full'>
-        <div className="flex flex-col h-full justify-around md:justify-center max-w-[80%]">
-          <div className="flex w-full h-96 flex-col md:flex-row">
+      <div className='flex flex-col items-center justify-center text-white bg-secondaryLight h-[90vh] w-full'>
+        <div className="flex flex-col h-3/4 justify-center max-w-[80%]">
+          <div className="flex w-full flex-col md:flex-row my-10">
             <div className="flex flex-col justify-center mt-5">
               <h1 className="text-3xl">Construye la casa de tus sueños</h1>
               <h2 className="">Calcula los materiales necesarios para construir tu casa en cuestión de minutos</h2>
             </div>
-            <SketchsCanvas/>
+            <div className="h-[300px]">
+              <SketchsCanvas/>
+            </div>
           </div>
           <Link to='/calculator' className='text-center rounded-full bg-tertiary px-4 py-2 md:w-fit'>Calcula Ahora!</Link>
         </div>
@@ -64,7 +66,7 @@ function HomePage() {
           <li>No importa si eres un experto en construcción o un <strong>principiante</strong>, nuestra herramienta es <strong>fácil de usar</strong> y te ayudará a <strong>ahorrar tiempo y dinero</strong> en tu proyecto de construcción.</li>
         </ul>
       </div>
-      <div className="mt-10 flex flex-col items-center">
+      <div className="my-10 flex flex-col items-center">
         <h2 className='mb-5 w-full text-center text-3xl my-10'>Planes</h2>
         <ul className="grid grid-cols-1 md:grid-cols-3 w-[80%] text-center place-items-center gap-8 mt-8">
           <li className='bg-primary text-white w-fit h-[250px] items-center justify-center grid rounded-xl p-5'>
@@ -87,7 +89,6 @@ function HomePage() {
           </li>
         </ul>
       </div>
-      <Footer/>
     </>
   )
 }

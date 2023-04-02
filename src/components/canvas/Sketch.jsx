@@ -22,10 +22,9 @@ const Sketchs = () => {
       <pointLight intensity={1} />
       <primitive
         object={sketch.scene}
-        scale={2.5}
+        scale={2}
         position={[0, -2, 0]}
         rotation={[0, 0, 0]}
-        
       />
     </mesh>
   );
@@ -44,10 +43,12 @@ const SketchsCanvas = () => {
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
+          enablePan={false}
+          enableDamping={false}
           maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 4}
         />
-        <Sketchs  />
+        <Sketchs/>
       </Suspense>
       <Preload all />
     </Canvas>
