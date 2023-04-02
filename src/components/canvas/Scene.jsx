@@ -19,6 +19,7 @@ function Scene({ancho, longitud, altura}) {
         <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={true}
+          enablePan={false}
           maxPolarAngle={Math.PI/2}
           minPolarAngle={Math.PI/4}
           />

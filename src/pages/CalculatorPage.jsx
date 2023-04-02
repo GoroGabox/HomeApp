@@ -11,8 +11,8 @@ import {
 import { Scene } from "../components/canvas";
 
 function CalculatorPage() {
-  const [xRange, setXRange] = useState(1);
-  const [yRange, setYRange] = useState(1);
+  const [xRange, setXRange] = useState(3);
+  const [yRange, setYRange] = useState(3);
   const [zRange, setZRange] = useState(2.4);
 
   const handleSubmit = (e) => {
