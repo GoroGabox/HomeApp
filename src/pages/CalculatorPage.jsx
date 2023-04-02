@@ -27,9 +27,9 @@ function CalculatorPage() {
   };
 
   return (
-    <div className="flex flex-col bg-secondaryLight text-white h-[90vh] md:flex-row">
-      <Scene className="w-full h-[50%] md:w-2/3 md:h-full" ancho={xRange} longitud={yRange} altura={zRange}></Scene>
-      <div className="flex flex-col w-full h-[50%] bg-orange-600 p-10 overflow-y-auto md:w-1/3 md:h-full">
+    <div className="flex flex-col bg-gradient-to-r from-blue-500 to-sky-900  text-white h-[90vh] md:flex-row">
+      <Scene className="w-full h-[50%] md:w-2/5 md:h-full" ancho={xRange} longitud={yRange} altura={zRange}></Scene>
+      <div style={{height:'100%'}} className="flex flex-col w-full bg-gray-100 bg-opacity-50 backdrop-filter backdrop-blur-lg p-6 overflow-y-auto md:w-3/5 md:h-full">
         <form className="flex flex-col flex-1">
           <div>
             <h2 className="text-3xl">Medidas</h2>
@@ -43,7 +43,7 @@ function CalculatorPage() {
                     id="x"
                     min="0"
                     max="10"
-                    step="0.01"
+                    step="0.1"
                     value={xRange}
                     onChange={(e) => setXRange(Number(e.target.value))}
                   />
@@ -52,7 +52,7 @@ function CalculatorPage() {
                     id="x_text"
                     min="0"
                     max="10"
-                    step="0.01"
+                    step="0.1"
                     className="text-black"
                     value={xRange}
                     onChange={(e) => setXRange(Number(e.target.value))}
@@ -68,7 +68,7 @@ function CalculatorPage() {
                     id="y"
                     min="0"
                     max="10"
-                    step="0.01"
+                    step="0.1"
                     value={yRange}
                     onChange={(e) => setYRange(Number(e.target.value))}
                   />
@@ -77,7 +77,7 @@ function CalculatorPage() {
                     id="y_text"
                     min="0"
                     max="10"
-                    step="0.01"
+                    step="0.1"
                     className="text-black"
                     value={yRange}
                     onChange={(e) => setYRange(Number(e.target.value))}
@@ -92,8 +92,8 @@ function CalculatorPage() {
                     type="range"
                     id="z"
                     min="2.4"
-                    max="10"
-                    step="0.01"
+                    max="6"
+                    step="0.1"
                     value={zRange}
                     onChange={(e) => setZRange(Number(e.target.value))}
                   />
@@ -101,8 +101,8 @@ function CalculatorPage() {
                     type="number"
                     id="z_text"
                     min="2.4"
-                    max="10"
-                    step="0.01"
+                    max="6"
+                    step="0.1"
                     className="text-black"
                     value={zRange}
                     onChange={(e) => setZRange(Number(e.target.value))}
@@ -111,23 +111,17 @@ function CalculatorPage() {
               </div>
             </div>
           </div>
-          <div className="mt-5 w-1/2 flex justify-around">
-            <button className="bg-cyan-700 px-3 py-1 rounded-full" onClick={handleReset}>Reset</button>
-            <button className="bg-cyan-700 px-3 py-1 rounded-full" type="submit">Calcular</button>
-          </div>
         </form>
-        <hr className="my-10"/>
+        <hr className="my-5"/>
         <LosaCemento ancho={xRange} longitud={yRange} />
-        <hr className="my-10"/>
+        <hr className="my-5"/>
         <MuroMetalcom ancho={xRange} longitud={yRange} altura={zRange} />
-        <hr className="my-10"/>
+        <hr className="my-5"/>
         <MuroMadera ancho={xRange} longitud={yRange} altura={zRange} />
-        <hr className="my-10"/>
+        <hr className="my-5"/>
         <TechoDobleMetalcom ancho={xRange} longitud={yRange} />
-        <hr className="my-10"/>
+        <hr className="my-5"/>
         <TechoSimpleMetalcom ancho={xRange} longitud={yRange} />
-        <hr className="my-10"/>
-        <CercoPostes ancho={xRange} longitud={yRange} altura={zRange} />
       </div>
     </div>
   );

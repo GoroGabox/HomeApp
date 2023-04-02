@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 
 function TechoDobleMetalcom({ancho, longitud}) {
 
+  const [show, setShow] = useState(false);
+
   //medidas
   const ladoMayor = (ancho, longitud) =>{
     if (ancho>longitud) {
@@ -51,15 +53,40 @@ function TechoDobleMetalcom({ancho, longitud}) {
   
   return (
     <div>
-      <h2 className='text-xl'>Materiales necesarios para techo de 2 pendientes:</h2>
-      <ul className='pl-6'>
-        <li>- Canal Omega: {omegas} unidades</li>
-        <li>- Canal C: {canalC} unidades</li>
-        <li>- Tornillo Lenteja: {lenteja} unidades</li>
-        <li>- Tornillo Hexagonal: {hexagonal} unidades</li>
-        <li>- Planchas Zinc: {zinc} unidades</li>
-        <li>- Planchas Fibro Cemento: {fibroCemento} unidades</li>
+      <div className="flex justify-between mb-3">
+        <h2 className='text-xl'>Techo de 2 pendientes:</h2>
+        <div className="hover:cursor-pointer" onClick={(e) => setShow(!show)}>
+              {show?'-':'+'}
+        </div>
+      </div>
+      {show&&
+      <ul className='grid grid-cols-4 gap-1'>
+        <li className='text-center bg-sky-900'>Icon</li>
+        <li className='text-center bg-sky-900'>Canal Omega</li>
+        <li className='text-center bg-sky-900'>{omegas}</li>
+        <li className='text-center bg-sky-900'>unidades</li>
+        <li className='text-center bg-sky-900'>Icon</li>
+        <li className='text-center bg-sky-900'>Canal C</li>
+        <li className='text-center bg-sky-900'>{canalC}</li>
+        <li className='text-center bg-sky-900'>unidades</li>
+        <li className='text-center bg-sky-900'>Icon</li>
+        <li className='text-center bg-sky-900'>Tornillo Lenteja</li>
+        <li className='text-center bg-sky-900'>{lenteja}</li>
+        <li className='text-center bg-sky-900'>unidades</li>
+        <li className='text-center bg-sky-900'>Icon</li>
+        <li className='text-center bg-sky-900'>Tornillo Hexagonal</li>
+        <li className='text-center bg-sky-900'>{hexagonal}</li>
+        <li className='text-center bg-sky-900'>unidades</li>
+        <li className='text-center bg-sky-900'>Icon</li>
+        <li className='text-center bg-sky-900'>Planchas Zinc</li>
+        <li className='text-center bg-sky-900'>{zinc}</li>
+        <li className='text-center bg-sky-900'>unidades</li>
+        <li className='text-center bg-sky-900'>Icon</li>
+        <li className='text-center bg-sky-900'>Planchas Fibro Cemento</li>
+        <li className='text-center bg-sky-900'>{fibroCemento}</li>
+        <li className='text-center bg-sky-900'>unidades</li>
       </ul>
+      }
     </div>
   )
 }

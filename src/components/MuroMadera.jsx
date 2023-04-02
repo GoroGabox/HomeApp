@@ -1,7 +1,9 @@
 import { pow, sqrt } from 'mathjs';
-import React from 'react';
+import React, { useState } from 'react';
 
 function MuroMadera({ancho, longitud, altura}) {
+
+  const [show, setShow] = useState(false);
 
   // Cálculo del area de los muros
   const area = ancho * altura * 2 + longitud * altura * 2;
@@ -28,15 +30,41 @@ function MuroMadera({ancho, longitud, altura}) {
 
   return (
     <div>
-      <h2 className='text-xl'>Materiales necesarios para muros de madera:</h2>
-      <ul className='pl-6'>
-        <li>- Palo seco 2x2: {cantVert} de 3m</li>
-        <li>- Palo seco 2x4: {cantHorz} de 3m</li>
-        <li>- Panel OSB: {osb} unidades</li>
-        <li>- Panel fibrocemento: {fibroCemento} unidades</li>
-        <li>- Clavos 4': {clavo} unidades</li>
-        <li>- Tornillo fijacion: {fijacion} unidades</li>
+      <div className="flex justify-between mb-3">
+        <h2 className='text-xl'>Muros de madera:</h2>
+        <div className="hover:cursor-pointer" onClick={(e) => setShow(!show)}>
+            {show?'-':'+'}
+        </div>
+      </div>
+      {show&&
+      
+      <ul className='grid grid-cols-4 gap-1'>
+        <li className='text-center bg-sky-900'>Icon</li>
+        <li className='text-center bg-sky-900'>Palo seco 2x2</li>
+        <li className='text-center bg-sky-900'>{cantVert}</li>
+        <li className='text-center bg-sky-900'>3m</li>
+        <li className='text-center bg-sky-900'>Icon</li>
+        <li className='text-center bg-sky-900'>Palo seco 2x4</li>
+        <li className='text-center bg-sky-900'>{cantHorz}</li>
+        <li className='text-center bg-sky-900'>3m</li>
+        <li className='text-center bg-sky-900'>Icon</li>
+        <li className='text-center bg-sky-900'>Panel OSB</li>
+        <li className='text-center bg-sky-900'>{osb}</li>
+        <li className='text-center bg-sky-900'>unidades</li>
+        <li className='text-center bg-sky-900'>Icon</li>
+        <li className='text-center bg-sky-900'>Panel fibrocemento</li>
+        <li className='text-center bg-sky-900'>{fibroCemento}</li>
+        <li className='text-center bg-sky-900'>unidades</li>
+        <li className='text-center bg-sky-900'>Icon</li>
+        <li className='text-center bg-sky-900'>Clavos 4</li>
+        <li className='text-center bg-sky-900'>{clavo}</li>
+        <li className='text-center bg-sky-900'>unidades</li>
+        <li className='text-center bg-sky-900'>Icon</li>
+        <li className='text-center bg-sky-900'>Tornillo fijacion</li>
+        <li className='text-center bg-sky-900'>{fijacion}</li>
+        <li className='text-center bg-sky-900'>unidades</li>
       </ul>
+      }
     </div>
   );
 }
