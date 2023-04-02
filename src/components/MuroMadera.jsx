@@ -1,5 +1,23 @@
 import { pow, sqrt } from 'mathjs';
 import React, { useState } from 'react';
+import {
+  aceroIcon,
+  aguaIcon,
+  amiantoIcon,
+  arenaIcon,
+  canalCIcon,
+  canalUIcon,
+  cementoIcon,
+  columnaIcon,
+  concretoIcon,
+  hormigonIcon,
+  maderaIcon,
+  mallaIcon,
+  piedraIcon,
+  tableroIcon,
+  techoIcon,
+  tornilloIcon
+} from '../assets/icons'
 
 function MuroMadera({ancho, longitud, altura}) {
 
@@ -39,27 +57,39 @@ function MuroMadera({ancho, longitud, altura}) {
       {show&&
       
       <ul className='grid grid-cols-4 gap-1'>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={tableroIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-center bg-sky-900'>Palo seco 2x2</li>
         <li className='text-center bg-sky-900'>{cantVert}</li>
         <li className='text-center bg-sky-900'>3m</li>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={tableroIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-center bg-sky-900'>Palo seco 2x4</li>
         <li className='text-center bg-sky-900'>{cantHorz}</li>
         <li className='text-center bg-sky-900'>3m</li>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={maderaIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-center bg-sky-900'>Panel OSB</li>
         <li className='text-center bg-sky-900'>{osb}</li>
         <li className='text-center bg-sky-900'>unidades</li>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={maderaIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-center bg-sky-900'>Panel fibrocemento</li>
         <li className='text-center bg-sky-900'>{fibroCemento}</li>
         <li className='text-center bg-sky-900'>unidades</li>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={tornilloIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-center bg-sky-900'>Clavos 4</li>
         <li className='text-center bg-sky-900'>{clavo}</li>
         <li className='text-center bg-sky-900'>unidades</li>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={tornilloIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-center bg-sky-900'>Tornillo fijacion</li>
         <li className='text-center bg-sky-900'>{fijacion}</li>
         <li className='text-center bg-sky-900'>unidades</li>

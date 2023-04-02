@@ -1,5 +1,12 @@
 import { pow, sqrt } from 'mathjs';
 import React, { useState } from 'react';
+import {
+  aceroIcon,
+  canalCIcon,
+  canalUIcon,
+  maderaIcon,
+  tornilloIcon
+} from '../assets/icons'
 
 function MuroMetalcom({ancho, longitud, altura}) {
 
@@ -38,31 +45,45 @@ function MuroMetalcom({ancho, longitud, altura}) {
       {show&&
       
       <ul className='grid grid-cols-4 gap-1'>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={canalUIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-center bg-sky-900'>Canal U</li>
         <li className='text-center bg-sky-900'>{cantCanalU.toFixed(2)}</li>
         <li className='text-center bg-sky-900'>6m</li>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={canalCIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-center bg-sky-900'>Canal C</li>
         <li className='text-center bg-sky-900'>{cantCanalC.toFixed(2)}</li>
         <li className='text-center bg-sky-900'>6m</li>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={maderaIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-sm text-center bg-sky-900'>Panel OSB</li>
         <li className='text-center bg-sky-900'>{osb}</li>
         <li className='text-center bg-sky-900'>unidades</li>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={maderaIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-sm text-center bg-sky-900'>Panel fibrocemento</li>
         <li className='text-center bg-sky-900'>{fibroCemento}</li>
         <li className='text-center bg-sky-900'>unidades</li>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={tornilloIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-sm text-center bg-sky-900'>Tornillo Lenteja</li>
         <li className='text-center bg-sky-900'>{lenteja}</li>
         <li className='text-center bg-sky-900'>unidades</li>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={tornilloIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-sm text-center bg-sky-900'>Tornillo Hexagonal</li>
         <li className='text-center bg-sky-900'>{hexagonal}</li>
         <li className='text-center bg-sky-900'>unidades</li>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={aceroIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-center bg-sky-900'>Tensor</li>
         <li className='text-center bg-sky-900'>{tensor}</li>
         <li className='text-center bg-sky-900'>60m</li>

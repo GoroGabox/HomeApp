@@ -1,5 +1,12 @@
 import { pow, sqrt } from 'mathjs'
 import React, { useState } from 'react'
+import {
+  amiantoIcon,
+  canalCIcon,
+  maderaIcon,
+  techoIcon,
+  tornilloIcon
+} from '../assets/icons'
 
 function TechoSimpleMetalcom({ancho, longitud}) {
 
@@ -61,27 +68,39 @@ function TechoSimpleMetalcom({ancho, longitud}) {
       </div>
       {show&&
       <ul className='grid grid-cols-4 gap-1'>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={techoIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-center bg-sky-900'>Canal Omega</li>
         <li className='text-center bg-sky-900'>{omegas}</li>
         <li className='text-center bg-sky-900'>unidades</li>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={canalCIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-center bg-sky-900'>Canal C</li>
         <li className='text-center bg-sky-900'>{canalC}</li>
         <li className='text-center bg-sky-900'>unidades</li>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={tornilloIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-center bg-sky-900'>Tornillo Lenteja</li>
         <li className='text-center bg-sky-900'>{lenteja}</li>
         <li className='text-center bg-sky-900'>unidades</li>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={tornilloIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-center bg-sky-900'>Tornillo Hexagonal</li>
         <li className='text-center bg-sky-900'>{hexagonal}</li>
         <li className='text-center bg-sky-900'>unidades</li>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={amiantoIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-center bg-sky-900'>Planchas Zinc</li>
         <li className='text-center bg-sky-900'>{zinc}</li>
         <li className='text-center bg-sky-900'>unidades</li>
-        <li className='text-center bg-sky-900'>Icon</li>
+        <li className="text-center bg-sky-900 flex justify-center">
+            <img src={maderaIcon} alt="icono" className='w-1/4'/>
+        </li>
         <li className='text-center bg-sky-900'>Planchas Fibro Cemento</li>
         <li className='text-center bg-sky-900'>{fibroCemento}</li>
         <li className='text-center bg-sky-900'>unidades</li>
