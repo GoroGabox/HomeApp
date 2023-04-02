@@ -1,5 +1,5 @@
 import React, { useRef } from "react"
-import { woodTexture } from "../../images/textures"
+import { woodTexture } from "../../assets/images/textures"
 
 function Muros({ancho, longitud, altura}) {
     const mesh = useRef()

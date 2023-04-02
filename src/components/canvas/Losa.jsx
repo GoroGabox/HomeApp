@@ -1,5 +1,5 @@
 import React, { useRef } from "react"
-import { dirtTexture } from "../../images/textures"
+import { dirtTexture } from "../../assets/images/textures"
 
 function Losa({ancho, longitud, altura}) {
     const mesh = useRef()
