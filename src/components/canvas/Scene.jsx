@@ -22,6 +22,7 @@ function Scene({ancho, longitud, altura}) {
           maxPolarAngle={Math.PI/2}
           minPolarAngle={Math.PI/4}
           />
+        <gridHelper args={[13, 13]} position={[0,(-altura/2)-0.2,0]}/>
         <House  ancho={ancho} longitud={longitud} altura={altura}/>
       </Suspense>
 

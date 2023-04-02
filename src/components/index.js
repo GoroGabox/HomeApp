@@ -6,6 +6,7 @@ import MuroMetalcom from "./MuroMetalcom";
 import MuroMadera from "./MuroMadera";
 import TechoDobleMetalcom from "./TechoDobleMetalcom";
 import TechoSimpleMetalcom from "./TechoSimpleMetalcom";
+import Footer from "./Footer";
 
 export {
     Navbar,
@@ -15,5 +16,6 @@ export {
     MuroMetalcom,
     MuroMadera,
     TechoDobleMetalcom,
-    TechoSimpleMetalcom
+    TechoSimpleMetalcom,
+    Footer,
 }
