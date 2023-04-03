@@ -7,25 +7,20 @@ import {
   TechoSimpleMetalcom,
 } from "../components";
 
-import { CalculatorContext, CalculatorProvider } from "../context/CalculatorContext"
-
 import { Scene } from "../components/canvas";
 
 function CalculatorPage() {
-
 
   const [xRange, setXRange] = useState(3);
   const [yRange, setYRange] = useState(3);
   const [zRange, setZRange] = useState(2.4);
 
   return (
-    <CalculatorProvider>
       <div className="flex flex-col bg-gradient-to-r from-blue-500 to-sky-900  text-white h-[90vh] md:flex-row">
         <Scene className="w-full h-[50%] md:w-2/5 md:h-full" ancho={xRange} longitud={yRange} altura={zRange} />
         <div style={{ height: '100%' }} className="flex flex-col w-full bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg p-6 overflow-y-auto md:w-3/5 md:h-full">
           <form className="flex flex-col flex-1">
             <div>
-              <h2 className="text-3xl">Medidas</h2>
               <div className="mt-5">
                 <div className="flex flex-col">
                   <label htmlFor="x" >Ancho (metros):</label>
@@ -117,7 +112,6 @@ function CalculatorPage() {
           <TechoSimpleMetalcom ancho={xRange} longitud={yRange} />
         </div>
       </div>
-    </CalculatorProvider>
   );
 }
 

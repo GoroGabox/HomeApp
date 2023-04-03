@@ -1,6 +1,8 @@
 import React,{ createContext, useState } from 'react'
 
-export const CalculatorContext = createContext(null)
+const CalculatorContext = createContext(null)
+
+export default CalculatorContext
 
 export const CalculatorProvider = ({children}) => {
     const [xRange, setXRange] = useState(3);
@@ -12,9 +14,9 @@ export const CalculatorProvider = ({children}) => {
     let setAltura = (e) => setZRange(Number(e.target.value))
 
     let contextData ={
-        ancho: xRange,
-        longitud: yRange,
-        altura: zRange,
+        xRange: xRange,
+        yRange: yRange,
+        zRange: zRange,
         setAncho: setAncho,
         setLongitud: setLongitud,
         setAltura: setAltura,
