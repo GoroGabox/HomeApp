@@ -41,7 +41,7 @@ function CalculatorPage() {
                     className="flex flex-1"
                     type="range"
                     id="x"
-                    min="0"
+                    min="1"
                     max="10"
                     step="0.1"
                     value={xRange}
@@ -50,7 +50,7 @@ function CalculatorPage() {
                   <input
                     type="number"
                     id="x_text"
-                    min="0"
+                    min="1"
                     max="10"
                     step="0.1"
                     className="text-black"
@@ -66,7 +66,7 @@ function CalculatorPage() {
                     className="flex flex-1"
                     type="range"
                     id="y"
-                    min="0"
+                    min="1"
                     max="10"
                     step="0.1"
                     value={yRange}
@@ -75,7 +75,7 @@ function CalculatorPage() {
                   <input
                     type="number"
                     id="y_text"
-                    min="0"
+                    min="1"
                     max="10"
                     step="0.1"
                     className="text-black"

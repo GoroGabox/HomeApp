@@ -11,7 +11,7 @@ function Scene({ancho, longitud, altura}) {
         frameloop='demand'
         shadows
         dpr={[1, 2]}
-        camera={{ position: [20, 3, 5], fov: 35 }}
+        camera={{ position: [20, 10, 20], fov: 30 }}
         gl={{ preserveDrawingBuffer: true }}  
       >
         <Sky sunPosition={[100, 100, 20]} />
@@ -20,6 +20,7 @@ function Scene({ancho, longitud, altura}) {
         <OrbitControls
           enableZoom={true}
           enablePan={false}
+          enableDamping={false}
           maxPolarAngle={Math.PI/2}
           minPolarAngle={Math.PI/4}
           />
