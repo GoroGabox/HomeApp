@@ -36,9 +36,9 @@ function MuroMetalcom({ancho, longitud, altura}) {
 
   return (
     <div>
-      <div className="flex justify-between mb-3">
+      <div className="flex justify-between mb-3 hover:cursor-pointer" onClick={(e) => setShow(!show)}>
         <h2 className='text-xl'>Muros de metalcom:</h2>
-        <div className="hover:cursor-pointer" onClick={(e) => setShow(!show)}>
+        <div>
           {show?'-':'+'}
         </div>
       </div>

@@ -32,7 +32,7 @@ function Cercha({ancho, ubicacion, altura}) {
 
                 <primitive
                     object={copia}
-                    scale={[ancho*5/12,1,1]}
+                    scale={[ancho*5/12,ancho/4,1]}
                 />
             </mesh>
     ) 

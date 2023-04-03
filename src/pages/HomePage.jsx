@@ -12,9 +12,9 @@ import {
 function HomePage() {
   return (
     <>
-      <div className='flex flex-col items-center justify-center text-white bg-secondaryLight h-[90vh] w-full'>
-        <div className="flex flex-col h-3/4 justify-center max-w-[80%]">
-          <div className="flex w-full flex-col md:flex-row my-10">
+      <div className='flex flex-col items-center justify-center text-white bg-secondaryLight h-[75vh] w-full min-h-fit'>
+        <div className="flex flex-col justify-center max-w-[80%]">
+          <div className="flex w-full flex-col md:flex-row">
             <div className="flex flex-col justify-center mt-5">
               <h1 className="text-3xl">Construye la casa de tus sueños</h1>
               <h2 className="">Calcula los materiales necesarios para construir tu casa en cuestión de minutos</h2>

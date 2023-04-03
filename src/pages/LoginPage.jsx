@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 
 function LoginPage() {
   return (
@@ -13,7 +14,7 @@ function LoginPage() {
           <input type="password" />
         </label>
         <button className='text-center text-white rounded-full bg-tertiary px-4 py-2 w-full md:w-[150px]'>Iniciar sesion</button>
-        <a href='/register' className='text-center text-tertiary rounded-full border-solid border-2 border-tertiary px-4 py-2 w-full md:w-[150px]'>Registrate</a>
+        <Link to='/register' className='text-center text-tertiary rounded-full border-solid border-2 border-tertiary px-4 py-2 w-full md:w-[150px]'>Registrate</Link>
       </div>
     </div>
   )

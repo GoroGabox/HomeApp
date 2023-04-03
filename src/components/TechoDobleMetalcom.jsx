@@ -60,9 +60,9 @@ function TechoDobleMetalcom({ancho, longitud}) {
   
   return (
     <div>
-      <div className="flex justify-between mb-3">
+      <div className="flex justify-between mb-3 hover:cursor-pointer" onClick={(e) => setShow(!show)}>
         <h2 className='text-xl'>Techo de 2 pendientes:</h2>
-        <div className="hover:cursor-pointer" onClick={(e) => setShow(!show)}>
+        <div>
               {show?'-':'+'}
         </div>
       </div>
