@@ -11,7 +11,6 @@ const House = ({ancho, longitud, altura}) => {
         for (let i = -numCerchas; i <= numCerchas; i++) {
             const ubicacion = i;
             result.push(<Cercha ancho={ancho} ubicacion={ubicacion} altura={altura} key={i}/>);
-			console.log(ubicacion)
         }
         return result;
     }, [ancho, longitud, altura, numCerchas]);

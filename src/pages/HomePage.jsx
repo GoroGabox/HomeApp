@@ -1,7 +1,6 @@
 import React from 'react'
 import { SketchsCanvas } from '../components/canvas'
 import { Link } from 'react-router-dom'
-import { Footer } from '../components'
 import {
   presupuestoIcon,
   arquitecturaIcon,

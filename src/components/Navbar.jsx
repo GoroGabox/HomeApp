@@ -1,7 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {Link} from 'react-router-dom';
+import AuthContext from '../context/AuthContext'
 
 function Navbar() {
+  let {user, logout} = useContext(AuthContext)
+
   return (
     <div className='flex justify-between items-center bg-primary text-white h-[10vh]'>
       <div className="w-[60%] flex justify-around">
@@ -19,18 +22,27 @@ function Navbar() {
         </Link>
       </div>
       <div className="w-[60%] flex gap-10 justify-end mr-4">
-        <Link
-            to='/login'
-            className='flex'
-        >
-          Login
-        </Link>
-        <Link
-            to='/register'
-            className='flex'
-        >
-          Register
-        </Link>
+        {user?
+        <>
+          <div>{user.name}</div>
+          <div onClick={logout}>Log out</div>
+        </>
+        :
+        <>
+          <Link
+              to='/login'
+              className='flex'
+          >
+            Login
+          </Link>
+          <Link
+              to='/register'
+              className='flex'
+          >
+            Register
+          </Link>
+        </>
+        }
       </div>
     </div>
   )
