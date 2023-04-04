@@ -9,17 +9,18 @@ import {
 
 import { Scene } from "../components/canvas";
 
+import CalculatorContext  from "../context/CalculatorContext";
+
 function CalculatorPage() {
 
-  const [xRange, setXRange] = useState(3);
-  const [yRange, setYRange] = useState(3);
-  const [zRange, setZRange] = useState(2.4);
+  let {xRange,yRange,zRange,setAncho,setLongitud,setAltura} = useContext(CalculatorContext)
+
 
   return (
       <div className="flex flex-col bg-gradient-to-r from-blue-500 to-sky-900  text-white h-[90vh] md:flex-row">
         <Scene className="w-full h-[50%] md:w-2/5 md:h-full" ancho={xRange} longitud={yRange} altura={zRange} />
         <div style={{ height: '100%' }} className="flex flex-col w-full bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg p-6 overflow-y-auto md:w-3/5 md:h-full">
-          <form className="flex flex-col flex-1">
+          <div className="flex flex-col flex-1">
             <div>
               <div className="mt-5">
                 <div className="flex flex-col">
@@ -33,7 +34,7 @@ function CalculatorPage() {
                       max="10"
                       step="0.1"
                       value={xRange}
-                      onChange={(e) => setXRange(Number(e.target.value))}
+                      onChange={setAncho}
                     />
                     <input
                       type="number"
@@ -43,7 +44,7 @@ function CalculatorPage() {
                       step="0.1"
                       className="text-black"
                       value={xRange}
-                      onChange={(e) => setXRange(Number(e.target.value))}
+                      onChange={setAncho}
                     />
                   </div>
                 </div>
@@ -58,7 +59,7 @@ function CalculatorPage() {
                       max="10"
                       step="0.1"
                       value={yRange}
-                      onChange={(e) => setYRange(Number(e.target.value))}
+                      onChange={setLongitud}
                     />
                     <input
                       type="number"
@@ -68,7 +69,7 @@ function CalculatorPage() {
                       step="0.1"
                       className="text-black"
                       value={yRange}
-                      onChange={(e) => setYRange(Number(e.target.value))}
+                      onChange={setLongitud}
                     />
                   </div>
                 </div>
@@ -83,7 +84,7 @@ function CalculatorPage() {
                       max="6"
                       step="0.1"
                       value={zRange}
-                      onChange={(e) => setZRange(Number(e.target.value))}
+                      onChange={setAltura}
                     />
                     <input
                       type="number"
@@ -93,13 +94,13 @@ function CalculatorPage() {
                       step="0.1"
                       className="text-black"
                       value={zRange}
-                      onChange={(e) => setZRange(Number(e.target.value))}
+                      onChange={setAltura}
                     />
                   </div>
                 </div>
               </div>
             </div>
-          </form>
+          </div>
           <hr className="my-5" />
           <LosaCemento ancho={xRange} longitud={yRange} />
           <hr className="my-5" />

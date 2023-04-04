@@ -25,7 +25,7 @@ function HomePage() {
           <Link to='/calculator' className='text-center rounded-full bg-tertiary px-4 py-2 md:w-fit'>Calcula Ahora!</Link>
         </div>
       </div>
-      <div className="mt-10 flex flex-col  items-center">
+      <div className="mt-5 flex flex-col items-center">
         <h2 className='mb-5 w-full text-center text-3xl my-10'>Servicios</h2>
         <ul className="grid grid-cols-1 gap-8 w-[80%] mt-10">
           <li className='md:flex md:flex-row-reverse'>

@@ -1,5 +1,4 @@
 import React, { useRef, useMemo } from "react"
-import { woodTexture } from "../../assets/images/textures"
 import { useGLTF } from "@react-three/drei";
 
 function Cercha({ancho, ubicacion, altura}) {

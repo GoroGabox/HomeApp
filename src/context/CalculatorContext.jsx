@@ -1,8 +1,8 @@
-import React,{ createContext, useState } from 'react'
+import React,{ createContext, useState } from 'react';
 
-const CalculatorContext = createContext(null)
+const CalculatorContext = createContext(null);
 
-export default CalculatorContext
+export default CalculatorContext;
 
 export const CalculatorProvider = ({children}) => {
     const [xRange, setXRange] = useState(3);
@@ -27,4 +27,4 @@ export const CalculatorProvider = ({children}) => {
             {children}
         </CalculatorContext.Provider>
     )
-}
+};

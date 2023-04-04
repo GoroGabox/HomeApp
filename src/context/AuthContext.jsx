@@ -1,10 +1,7 @@
 import React,{ createContext, useState, useEffect } from 'react'
 
 const AuthContext = createContext(null)
-
-
-export default AuthContext;
-
+export default AuthContext
 
 export const AuthProvider = ({children}) => {
     const [isMobile, setIsMobile] = useState(false);
