@@ -22,6 +22,13 @@ function Muros({ancho, longitud, altura}) {
 				<meshBasicMaterial color="red" wireframe={true}/>
 				<boxGeometry args={[1, 1, 1]} />
 				<MuroX longitud={longitud} altura={altura} />
+				<mesh 
+				position={[-0.45, 0, 0]}
+				scale={[grosor/10,1,1]}
+				>
+					<meshBasicMaterial color="red"/>
+					<boxGeometry args={[1, 1, 1]} />
+				</mesh>
 			</mesh>
 			<mesh 
 			position={[(ancho/2)-grosor/2, 0, 0]}
@@ -30,6 +37,13 @@ function Muros({ancho, longitud, altura}) {
 				<meshBasicMaterial color="blue" wireframe={true}/>
 				<boxGeometry args={[1, 1, 1]} />
 				<MuroX longitud={longitud} altura={altura} />
+				<mesh 
+				position={[0.45, 0, 0]}
+				scale={[grosor/10,1,1]}
+				>
+					<meshBasicMaterial color="blue"/>
+					<boxGeometry args={[1, 1, 1]} />
+				</mesh>
 			</mesh>
 			<mesh 
 			position={[0, 0, (longitud/2)-grosor/2]}
