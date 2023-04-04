@@ -1,5 +1,13 @@
 import React, { useRef, useMemo } from "react"
-import { woodTexture } from "../../assets/images/textures"
+import { woodTexture, zincTexture } from "../../assets/images/textures"
+
+function mapLengthToRange(l, rangeMin, rangeMax) {
+	const lengthMin = 0;
+	const lengthMax = 100;
+	const length = (l - lengthMin) / (lengthMax - lengthMin);
+	const range = (rangeMax - rangeMin) * length + rangeMin;
+	return range;
+}
 
 function Muros({ancho, longitud, altura}) {
     const mesh = useRef()
@@ -46,14 +54,7 @@ function Muros({ancho, longitud, altura}) {
 export default Muros
 
 export function MuroX({longitud, altura}) {
-	function mapLengthToRange(l, rangeMin, rangeMax) {
-		const lengthMin = 0;
-		const lengthMax = 100;
-		const length = (l - lengthMin) / (lengthMax - lengthMin);
-		const range = (rangeMax - rangeMin) * length + rangeMin;
-		return range;
-	}
-
+	
 	const numPilares = Math.floor((longitud/0.6)+1);
 	const porcentajeEspacio = 100/(longitud/0.6)
 	
@@ -71,11 +72,38 @@ export function MuroX({longitud, altura}) {
 	return (
 		<>
 		{pilares}
+		<Viga altura={0.5}/>
+		<Viga altura={-0.5}/>
 		</>
 	)
 }
 
-export function PilarX({ubicacion, altura}) {
+export function MuroY({longitud, altura}) {
+
+	const numPilares = Math.floor((longitud/0.6)+1);
+	const porcentajeEspacio = 100/(longitud/0.6)
+	
+	const pilares = useMemo(() => {
+		const result = [];
+		let length = 0;
+		for (let i = 0; i < numPilares; i++) {
+			const range = mapLengthToRange(length, -0.5, 0.5);
+			length += porcentajeEspacio
+			result.push(<PilarY ubicacion={range} altura={altura} key={i}/>);
+		}
+		return result;
+	}, [longitud, altura, numPilares]);
+
+	return (
+		<>
+		{pilares}
+		<Viga altura={0.5}/>
+		<Viga altura={-0.5}/>
+		</>
+	)
+}
+
+export function PilarX({ubicacion}) {
 
 	return (
 		<>
@@ -84,43 +112,13 @@ export function PilarX({ubicacion, altura}) {
 			scale={[1,1,0.01]}
 			>
 				<boxGeometry args={[1, 1, 1]}/>
-				<meshBasicMaterial map={woodTexture}/>
+				<meshBasicMaterial map={zincTexture}/>
 			</mesh>
 		</>
 	)
 }
 
-export function MuroY({longitud, altura}) {
-	function mapLengthToRange(l, rangeMin, rangeMax) {
-		const lengthMin = 0;
-		const lengthMax = 100;
-		const length = (l - lengthMin) / (lengthMax - lengthMin);
-		const range = (rangeMax - rangeMin) * length + rangeMin;
-		return range;
-	}
-
-	const numPilares = Math.floor((longitud/0.6)+1);
-	const porcentajeEspacio = 100/(longitud/0.6)
-	
-	const pilares = useMemo(() => {
-		const result = [];
-		let length = 0;
-        for (let i = 0; i < numPilares; i++) {
-			const range = mapLengthToRange(length, -0.5, 0.5);
-			length += porcentajeEspacio
-            result.push(<PilarY ubicacion={range} altura={altura} key={i}/>);
-        }
-        return result;
-    }, [longitud, altura, numPilares]);
-
-	return (
-		<>
-		{pilares}
-		</>
-	)
-}
-
-export function PilarY({ubicacion, altura}) {
+export function PilarY({ubicacion}) {
 
 	return (
 		<>
@@ -129,7 +127,22 @@ export function PilarY({ubicacion, altura}) {
 			scale={[0.01,1,1]}
 			>
 				<boxGeometry args={[1, 1, 1]}/>
-				<meshBasicMaterial map={woodTexture}/>
+				<meshBasicMaterial map={zincTexture}/>
+			</mesh>
+		</>
+	)
+}
+
+export function Viga({altura}) {
+
+	return (
+		<>
+			<mesh
+			position={[ 0,altura,0]}
+			scale={[1,0.01,1]}
+			>
+				<boxGeometry args={[1, 1, 1]}/>
+				<meshBasicMaterial map={zincTexture}/>
 			</mesh>
 		</>
 	)

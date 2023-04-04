@@ -1,11 +1,13 @@
 import React, { useRef, useMemo } from "react"
 import { useGLTF } from "@react-three/drei";
+import { zincTexture } from "../../assets/images/textures";
 
 function Cercha({ancho, ubicacion, altura}) {
 
     const {scene} = useGLTF("./cercha/cercha.glb");
     const copia = useMemo(() => scene.clone(), [scene])
     const mesh = useRef()
+
 
     return (
             <mesh
@@ -19,6 +21,7 @@ function Cercha({ancho, ubicacion, altura}) {
                     penumbra={1}
                     intensity={1}
                     shadow-mapSize={1024}
+                    color={'#949494'}
                 />
                 <spotLight
                     position={[20, 50, -10]}
@@ -26,12 +29,13 @@ function Cercha({ancho, ubicacion, altura}) {
                     penumbra={1}
                     intensity={1}
                     shadow-mapSize={1024}
+                    color={'#949494'}
                 />
-                <pointLight intensity={1} />
+                <pointLight intensity={1} color={'#949494'}/>
 
                 <primitive
                     object={copia}
-                    scale={[ancho*5/12,ancho/4,1]}
+                    scale={[ancho*5/12,ancho/10,1]}
                 />
             </mesh>
     ) 
