@@ -36,7 +36,7 @@ function MuroMetalcom({ancho, longitud, altura}) {
 
   return (
     <div>
-      <div className="flex justify-between mb-3 hover:cursor-pointer" onClick={(e) => setShow(!show)}>
+      <div className="flex justify-between mb-3 hover:cursor-pointer bg-[#dbdbdb] p-3" onClick={(e) => setShow(!show)}>
         <h2 className='text-xl'>Muros de metalcom:</h2>
         <div>
           {show?'-':'+'}
@@ -44,49 +44,49 @@ function MuroMetalcom({ancho, longitud, altura}) {
       </div>
       {show&&
       
-      <ul className='grid grid-cols-4 gap-1'>
-        <li className="text-center bg-sky-900 flex justify-center">
+      <ul className='grid grid-cols-4 gap-1 border-solid border-blue-500 border-2'>
+        <li className="text-center flex justify-center">
             <img src={canalUIcon} alt="icono" className='w-1/4'/>
         </li>
-        <li className='text-center bg-sky-900'>Canal U</li>
-        <li className='text-center bg-sky-900'>{cantCanalU.toFixed(2)}</li>
-        <li className='text-center bg-sky-900'>6m</li>
-        <li className="text-center bg-sky-900 flex justify-center">
+        <li className='text-center'>Canal U</li>
+        <li className='text-center'>{cantCanalU.toFixed(2)}</li>
+        <li className='text-center'>6m</li>
+        <li className="text-center flex justify-center">
             <img src={canalCIcon} alt="icono" className='w-1/4'/>
         </li>
-        <li className='text-center bg-sky-900'>Canal C</li>
-        <li className='text-center bg-sky-900'>{cantCanalC.toFixed(2)}</li>
-        <li className='text-center bg-sky-900'>6m</li>
-        <li className="text-center bg-sky-900 flex justify-center">
+        <li className='text-center'>Canal C</li>
+        <li className='text-center'>{cantCanalC.toFixed(2)}</li>
+        <li className='text-center'>6m</li>
+        <li className="text-center flex justify-center">
             <img src={maderaIcon} alt="icono" className='w-1/4'/>
         </li>
-        <li className='text-sm text-center bg-sky-900'>Panel OSB</li>
-        <li className='text-center bg-sky-900'>{osb}</li>
-        <li className='text-center bg-sky-900'>unidades</li>
-        <li className="text-center bg-sky-900 flex justify-center">
+        <li className='text-sm text-center'>Panel OSB</li>
+        <li className='text-center'>{osb}</li>
+        <li className='text-center'>unidades</li>
+        <li className="text-center flex justify-center">
             <img src={maderaIcon} alt="icono" className='w-1/4'/>
         </li>
-        <li className='text-sm text-center bg-sky-900'>Panel fibrocemento</li>
-        <li className='text-center bg-sky-900'>{fibroCemento}</li>
-        <li className='text-center bg-sky-900'>unidades</li>
-        <li className="text-center bg-sky-900 flex justify-center">
+        <li className='text-sm text-center'>Panel fibrocemento</li>
+        <li className='text-center'>{fibroCemento}</li>
+        <li className='text-center'>unidades</li>
+        <li className="text-center flex justify-center">
             <img src={tornilloIcon} alt="icono" className='w-1/4'/>
         </li>
-        <li className='text-sm text-center bg-sky-900'>Tornillo Lenteja</li>
-        <li className='text-center bg-sky-900'>{lenteja}</li>
-        <li className='text-center bg-sky-900'>unidades</li>
-        <li className="text-center bg-sky-900 flex justify-center">
+        <li className='text-sm text-center'>Tornillo Lenteja</li>
+        <li className='text-center'>{lenteja}</li>
+        <li className='text-center'>unidades</li>
+        <li className="text-center flex justify-center">
             <img src={tornilloIcon} alt="icono" className='w-1/4'/>
         </li>
-        <li className='text-sm text-center bg-sky-900'>Tornillo Hexagonal</li>
-        <li className='text-center bg-sky-900'>{hexagonal}</li>
-        <li className='text-center bg-sky-900'>unidades</li>
-        <li className="text-center bg-sky-900 flex justify-center">
+        <li className='text-sm text-center'>Tornillo Hexagonal</li>
+        <li className='text-center'>{hexagonal}</li>
+        <li className='text-center'>unidades</li>
+        <li className="text-center flex justify-center">
             <img src={aceroIcon} alt="icono" className='w-1/4'/>
         </li>
-        <li className='text-center bg-sky-900'>Tensor</li>
-        <li className='text-center bg-sky-900'>{tensor}</li>
-        <li className='text-center bg-sky-900'>60m</li>
+        <li className='text-center'>Tensor</li>
+        <li className='text-center'>{tensor}</li>
+        <li className='text-center'>60m</li>
       </ul>
       }
     </div>

@@ -46,20 +46,34 @@ function Muros({ancho, longitud, altura}) {
 				</mesh>
 			</mesh>
 			<mesh 
-			position={[0, 0, (longitud/2)-grosor/2]}
+			position={[0, 0, (longitud/2)]}
 			scale={[ancho,altura,grosor]}
 			>
 				<meshBasicMaterial color="orange" wireframe={true}/>
 				<boxGeometry args={[1, 1, 1]} />
 				<MuroY longitud={ancho} altura={altura} />
+				<mesh 
+				position={[0, 0, 0.45]}
+				scale={[1,1,grosor/10]}
+				>
+					<meshBasicMaterial color="orange"/>
+					<boxGeometry args={[1, 1, 1]} />
+				</mesh>
 			</mesh>
 			<mesh 
-			position={[0, 0, (-longitud/2)+grosor/2]}
+			position={[0, 0, (-longitud/2)]}
 			scale={[ancho,altura,grosor]}
 			>
 				<meshBasicMaterial color="purple" wireframe={true}/>
 				<boxGeometry args={[1, 1, 1]} />
 				<MuroY longitud={ancho} altura={altura} />
+				<mesh 
+				position={[0, 0, -0.45]}
+				scale={[1,1,grosor/10]}
+				>
+					<meshBasicMaterial color="purple"/>
+					<boxGeometry args={[1, 1, 1]} />
+				</mesh>
 			</mesh>
 		</group>
 	)

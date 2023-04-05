@@ -11,7 +11,7 @@ function Losa({ancho, longitud, altura}) {
 				ref={mesh}
                 position={[0,((altura*-1)/2)-0.1,0]}
 			>
-				<boxGeometry args={[ancho*grow, alturaLosa, longitud*(grow-grow/15)]}/>
+				<boxGeometry args={[ancho*(grow-grow/15), alturaLosa, longitud*(grow-grow/15)]}/>
 				<meshBasicMaterial color={'#949494'} map={lightConcreteTexture}/>
 			</mesh>
 		</>

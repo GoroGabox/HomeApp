@@ -7,6 +7,8 @@ import MuroMadera from "./MuroMadera";
 import TechoDobleMetalcom from "./TechoDobleMetalcom";
 import TechoSimpleMetalcom from "./TechoSimpleMetalcom";
 import Footer from "./Footer";
+import PanelControl from "./PanelControl";
+import PDF from "./PDF";
 
 export {
     Navbar,
@@ -18,4 +20,6 @@ export {
     TechoDobleMetalcom,
     TechoSimpleMetalcom,
     Footer,
+    PanelControl,
+    PDF
 }

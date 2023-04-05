@@ -60,50 +60,50 @@ function TechoDobleMetalcom({ancho, longitud}) {
   
   return (
     <div>
-      <div className="flex justify-between mb-3 hover:cursor-pointer" onClick={(e) => setShow(!show)}>
+      <div className="flex justify-between mb-3 hover:cursor-pointer bg-[#dbdbdb] p-3" onClick={(e) => setShow(!show)}>
         <h2 className='text-xl'>Techo de 2 pendientes:</h2>
         <div>
               {show?'-':'+'}
         </div>
       </div>
       {show&&
-      <ul className='grid grid-cols-4 gap-1'>
-        <li className="text-center bg-sky-900 flex justify-center">
+      <ul className='grid grid-cols-4 gap-1 border-solid border-blue-500 border-2'>
+        <li className="text-center flex justify-center">
             <img src={techoIcon} alt="icono" className='w-1/4'/>
         </li>
-        <li className='text-center bg-sky-900'>Canal Omega</li>
-        <li className='text-center bg-sky-900'>{omegas}</li>
-        <li className='text-center bg-sky-900'>unidades</li>
-        <li className="text-center bg-sky-900 flex justify-center">
+        <li className='text-center'>Canal Omega</li>
+        <li className='text-center'>{omegas}</li>
+        <li className='text-center'>unidades</li>
+        <li className="text-center flex justify-center">
             <img src={canalCIcon} alt="icono" className='w-1/4'/>
         </li>
-        <li className='text-center bg-sky-900'>Canal C</li>
-        <li className='text-center bg-sky-900'>{canalC}</li>
-        <li className='text-center bg-sky-900'>unidades</li>
-        <li className="text-center bg-sky-900 flex justify-center">
+        <li className='text-center'>Canal C</li>
+        <li className='text-center'>{canalC}</li>
+        <li className='text-center'>unidades</li>
+        <li className="text-center flex justify-center">
             <img src={tornilloIcon} alt="icono" className='w-1/4'/>
         </li>
-        <li className='text-center bg-sky-900'>Tornillo Lenteja</li>
-        <li className='text-center bg-sky-900'>{lenteja}</li>
-        <li className='text-center bg-sky-900'>unidades</li>
-        <li className="text-center bg-sky-900 flex justify-center">
+        <li className='text-center'>Tornillo Lenteja</li>
+        <li className='text-center'>{lenteja}</li>
+        <li className='text-center'>unidades</li>
+        <li className="text-center flex justify-center">
             <img src={tornilloIcon} alt="icono" className='w-1/4'/>
         </li>
-        <li className='text-center bg-sky-900'>Tornillo Hexagonal</li>
-        <li className='text-center bg-sky-900'>{hexagonal}</li>
-        <li className='text-center bg-sky-900'>unidades</li>
-        <li className="text-center bg-sky-900 flex justify-center">
+        <li className='text-center'>Tornillo Hexagonal</li>
+        <li className='text-center'>{hexagonal}</li>
+        <li className='text-center'>unidades</li>
+        <li className="text-center flex justify-center">
             <img src={amiantoIcon} alt="icono" className='w-1/4'/>
         </li>
-        <li className='text-center bg-sky-900'>Planchas Zinc</li>
-        <li className='text-center bg-sky-900'>{zinc}</li>
-        <li className='text-center bg-sky-900'>unidades</li>
-        <li className="text-center bg-sky-900 flex justify-center">
+        <li className='text-center'>Planchas Zinc</li>
+        <li className='text-center'>{zinc}</li>
+        <li className='text-center'>unidades</li>
+        <li className="text-center flex justify-center">
             <img src={maderaIcon} alt="icono" className='w-1/4'/>
         </li>
-        <li className='text-center bg-sky-900'>Planchas Fibro Cemento</li>
-        <li className='text-center bg-sky-900'>{fibroCemento}</li>
-        <li className='text-center bg-sky-900'>unidades</li>
+        <li className='text-center'>Planchas Fibro Cemento</li>
+        <li className='text-center'>{fibroCemento}</li>
+        <li className='text-center'>unidades</li>
       </ul>
       }
     </div>

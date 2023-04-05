@@ -24,8 +24,8 @@ function Navbar() {
       <div className="w-[60%] flex gap-10 justify-end mr-4">
         {user?
         <>
-          <div>{user.name}</div>
-          <div onClick={logout}>Log out</div>
+          <div>Hello {user.name}</div>
+          <div className='cursor-pointer' onClick={logout}>Log out</div>
         </>
         :
         <>

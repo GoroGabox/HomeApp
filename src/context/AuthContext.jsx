@@ -1,9 +1,13 @@
 import React,{ createContext, useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const AuthContext = createContext(null)
 export default AuthContext
 
 export const AuthProvider = ({children}) => {
+
+    const navigate = useNavigate()
+
     const [isMobile, setIsMobile] = useState(false);
     const [user, setUser] = useState(null)
 
@@ -12,10 +16,12 @@ export const AuthProvider = ({children}) => {
             name:'Juan',
             account:'free',
         })
+        navigate('/calculator')
     }
 
     const logout = () => {
         setUser(null)
+        navigate('/login')
     }
 
     useEffect(() => {
