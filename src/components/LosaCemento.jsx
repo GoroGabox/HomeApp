@@ -23,10 +23,9 @@ function LosaCemento({ ancho, longitud }) {
 
   return (
     <div>
-      <div className="flex justify-between mb-3 hover:cursor-pointer bg-[#dbdbdb] p-3" onClick={(e) => setShow(!show)}>
+      <div className="flex justify-between items-center mb-3 hover:cursor-pointer bg-[#dbdbdb] p-3" onClick={(e) => setShow(!show)}>
         <h2 className="text-xl">Losa de cemento:</h2>
-        
-        <div>
+        <div className="text-3xl">
           {show?'-':'+'}
         </div>
       </div>

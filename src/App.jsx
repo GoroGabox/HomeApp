@@ -25,6 +25,7 @@ function App() {
                 </CalculatorProvider>
               }
             />
+            <Route path="*" element={<HomePage />} />
           </Routes>
           <Footer/>
         </AuthProvider>
