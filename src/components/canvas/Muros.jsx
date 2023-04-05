@@ -41,7 +41,7 @@ function Muros({ancho, longitud, altura}) {
 				position={[0.45, 0, 0]}
 				scale={[grosor/10,1,1]}
 				>
-					<meshBasicMaterial color="blue"/>
+					<meshBasicMaterial color="blue" wireframe={true}/>
 					<boxGeometry args={[1, 1, 1]} />
 				</mesh>
 			</mesh>
@@ -56,7 +56,7 @@ function Muros({ancho, longitud, altura}) {
 				position={[0, 0, 0.45]}
 				scale={[1,1,grosor/10]}
 				>
-					<meshBasicMaterial color="orange"/>
+					<meshBasicMaterial color="orange" wireframe={true}/>
 					<boxGeometry args={[1, 1, 1]} />
 				</mesh>
 			</mesh>

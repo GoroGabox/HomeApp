@@ -19,7 +19,7 @@ function Cercha({ancho, ubicacion, altura}) {
                     position={[-20, 50, 10]}
                     angle={0.12}
                     penumbra={1}
-                    intensity={1}
+                    intensity={.1}
                     shadow-mapSize={1024}
                     color={'#949494'}
                 />
@@ -27,11 +27,11 @@ function Cercha({ancho, ubicacion, altura}) {
                     position={[20, 50, -10]}
                     angle={0.12}
                     penumbra={1}
-                    intensity={1}
+                    intensity={.1}
                     shadow-mapSize={1024}
                     color={'#949494'}
                 />
-                <pointLight intensity={1} color={'#949494'}/>
+                <pointLight intensity={.1} color={'#949494'}/>
 
                 <primitive
                     object={copia}

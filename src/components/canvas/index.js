@@ -5,6 +5,7 @@ import Losa from "./Losa";
 import Muros from "./Muros";
 import Cercha from "./Cercha";
 import SketchsCanvas from "./Sketch";
+import Avatars from "./Avatar";
 
 export {
     Scene,
@@ -14,4 +15,5 @@ export {
     Muros,
     Cercha,
     SketchsCanvas,
+    Avatars,
 }
