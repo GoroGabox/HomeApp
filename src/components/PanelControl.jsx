@@ -6,7 +6,7 @@ function PanelControl() {
     let {xRange,yRange,zRange,setAncho,setLongitud,setAltura, material, handleMaterial, techo, handleTecho} = useContext(CalculatorContext)
 
   return (
-    <div className="flex flex-col flex-1">
+    <div className="flex flex-col flex-1 md:mt-10">
         <div>
             <div className="mt-5">
                 <div className="flex flex-col">
@@ -149,7 +149,7 @@ function PanelControl() {
                     </div>
                 </div>
             </div>
-            <div className="mt-5">** Altura persona : 1.7 metros **</div>
+            <div className="my-5">** Altura persona : 1.7 metros **</div>
         </div>
     </div>
   )
