@@ -43,9 +43,9 @@ function TechoSimpleMetalcom({ancho, longitud}) {
   const perimetro = longitudCuerda + (alero*2) + diagonal + altura
   const cantPilares = Math.ceil(longitudCuerda/0.6)+1
   const pilares = Math.ceil((cantPilares*altura)/2)
-  const canalC = Math.ceil((perimetro + pilares)*cantCerchas)
-  const cantOmegas = (Math.ceil(diagonal) + 1)
-  const omegas = Math.ceil(cantOmegas * mayor)
+  const canalC = Math.ceil(((perimetro + pilares)*cantCerchas)/6)
+  const omegas = (Math.ceil(diagonal) + 1)
+  const cantOmegas = Math.ceil((omegas * mayor)/6)
 
   //tornillos
   const lenteja = cantCerchas * 16
@@ -60,51 +60,67 @@ function TechoSimpleMetalcom({ancho, longitud}) {
   
   return (
     <div>
-      <div className="flex justify-between mb-3 hover:cursor-pointer bg-[#dbdbdb] p-3" onClick={(e) => setShow(!show)}>
+      <div className="flex justify-between items-center mb-3 hover:cursor-pointer bg-[#dbdbdb] p-3" onClick={(e) => setShow(!show)}>
         <h2 className='text-xl'>Techo de 1 pendiente:</h2>
-        <div>
+        <div className="text-3xl">
                 {show?'-':'+'}
         </div>
       </div>
       {show&&
-      <ul className='grid grid-cols-4 gap-1 border-solid border-blue-500 border-2'>
-        <li className="text-center flex justify-center">
-            <img src={techoIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-center'>Canal Omega</li>
-        <li className='text-center'>{omegas}</li>
-        <li className='text-center'>unidades</li>
-        <li className="text-center flex justify-center">
-            <img src={canalCIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-center'>Canal C</li>
-        <li className='text-center'>{canalC}</li>
-        <li className='text-center'>unidades</li>
-        <li className="text-center flex justify-center">
-            <img src={tornilloIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-center'>Tornillo Lenteja</li>
-        <li className='text-center'>{lenteja}</li>
-        <li className='text-center'>unidades</li>
-        <li className="text-center flex justify-center">
-            <img src={tornilloIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-center'>Tornillo Hexagonal</li>
-        <li className='text-center'>{hexagonal}</li>
-        <li className='text-center'>unidades</li>
-        <li className="text-center flex justify-center">
-            <img src={amiantoIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-center'>Planchas Zinc</li>
-        <li className='text-center'>{zinc}</li>
-        <li className='text-center'>unidades</li>
-        <li className="text-center flex justify-center">
-            <img src={maderaIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-center'>Planchas Fibro Cemento</li>
-        <li className='text-center'>{fibroCemento}</li>
-        <li className='text-center'>unidades</li>
-      </ul>
+      <>
+      <div className="flex flex-col mb-8">
+        <p className='text-sm text-gray-700'>Cantidad de cerchas: {cantCerchas} unidades</p>
+        <p className='text-sm text-gray-700'>Altura cercha: {altura} m</p>
+      </div>
+      <table className="table-auto border-solid border-blue-500 border-2 mx-auto w-full mb-10">
+        <thead>
+          <tr>
+            <th className="text-center w-1/4">Icono</th>
+            <th className="text-center">Material</th>
+            <th className="text-center">Cantidad</th>
+            <th className="text-center">Unidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className="border-solid border-blue-500 border-2 border-collapse">
+            <td className="flex justify-center md:w-fit"><img src={canalCIcon} alt="icono" className='w-1/4 md:w-1/12'/></td>
+            <td className="text-center">Canal C</td>
+            <td className="text-center">{canalC}</td>
+            <td className="text-center">6m</td>
+          </tr>
+          <tr className="border-solid border-blue-500 border-2 border-collapse">
+            <td className="flex justify-center md:w-fit"><img src={techoIcon} alt="icono" className='w-1/4 md:w-1/12'/></td>
+            <td className="text-center">Canal Omega</td>
+            <td className="text-center">{cantOmegas}</td>
+            <td className="text-center">6m</td>
+          </tr>
+          <tr className="border-solid border-blue-500 border-2 border-collapse">
+            <td className="flex justify-center md:w-fit"><img src={tornilloIcon} alt="icono" className='w-1/4 md:w-1/12'/></td>
+            <td className="text-center">Tornillo Lenteja</td>
+            <td className="text-center">{lenteja.toFixed(0)}</td>
+            <td className="text-center">unidades</td>
+          </tr>
+          <tr className="border-solid border-blue-500 border-2 border-collapse">
+            <td className="flex justify-center md:w-fit"><img src={tornilloIcon} alt="icono" className='w-1/4 md:w-1/12'/></td>
+            <td className="text-center">Tornillo Hexagonal</td>
+            <td className="text-center">{hexagonal.toFixed(0)}</td>
+            <td className="text-center">unidades</td>
+          </tr>
+          <tr className="border-solid border-blue-500 border-2 border-collapse">
+            <td className="flex justify-center md:w-fit"><img src={amiantoIcon} alt="icono" className='w-1/4 md:w-1/12'/></td>
+            <td className="text-center">Plancha Galvanizada</td>
+            <td className="text-center">{zinc}</td>
+            <td className="text-center">unidades</td>
+          </tr>
+          <tr className="border-solid border-blue-500 border-2 border-collapse">
+            <td className="flex justify-center md:w-fit"><img src={maderaIcon} alt="icono" className='w-1/4 md:w-1/12'/></td>
+            <td className="text-center">Plancha Fibrocemento</td>
+            <td className="text-center">{fibroCemento}</td>
+            <td className="text-center">unidades</td>
+          </tr>
+        </tbody>
+      </table>
+    </>
       }
     </div>
   )

@@ -3,7 +3,7 @@ import CalculatorContext  from "../context/CalculatorContext";
 
 function PanelControl() {
 
-    let {xRange,yRange,zRange,setAncho,setLongitud,setAltura} = useContext(CalculatorContext)
+    let {xRange,yRange,zRange,setAncho,setLongitud,setAltura, material, handleMaterial, techo, handleTecho} = useContext(CalculatorContext)
 
   return (
     <div className="flex flex-col flex-1">
@@ -89,25 +89,6 @@ function PanelControl() {
             <div className="mt-5 w-full">
                 <h2>Especificaciones: </h2>
                 <div className="flex flex-col mt-3 pl-3">
-                    <h2>Losa: </h2>
-                    <div className="grid grid-cols-2 justify-between">
-                        <label htmlFor="losa1">Vivienda (1/2/3):</label>
-                        <input
-                            className="flex w-fit mx-auto"
-                            type="radio"
-                            id="losa1"
-                            name='losa'
-                        />
-                        <label htmlFor="losa2" >Estaci. (1/2/2):</label>
-                        <input
-                            className="flex w-fit mx-auto"
-                            type="radio"
-                            id="losa2"
-                            name='losa'
-                        />
-                    </div>
-                </div>
-                <div className="flex flex-col mt-3 pl-3">
                     <h2>Muros: </h2>
                     <div className="grid grid-cols-2 justify-between">
                         <label htmlFor="muro1" >Metalcom:</label>
@@ -116,13 +97,19 @@ function PanelControl() {
                             type="radio"
                             id="muro1"
                             name='muro'
+                            value='opcion1'
+                            checked={material==='opcion1'}
+                            onChange={handleMaterial}
                         />
                         <label htmlFor="muro2" >Madera:</label>
                         <input
                             className="flex w-fit mx-auto"
                             type="radio"
-                            id="muro"
+                            id="muro2"
                             name='muro'
+                            value='opcion2'
+                            checked={material==='opcion2'}
+                            onChange={handleMaterial}
                         />
                         <label htmlFor="muro3" >Ladrillo:</label>
                         <input
@@ -130,6 +117,9 @@ function PanelControl() {
                             type="radio"
                             id="muro3"
                             name='muro'
+                            value='opcion3'
+                            checked={material==='opcion3'}
+                            onChange={handleMaterial}
                         />
                     </div>
                 </div>
@@ -142,13 +132,19 @@ function PanelControl() {
                             type="radio"
                             id="techo1"
                             name='techo'
+                            value='opcion1'
+                            checked={techo==='opcion1'}
+                            onChange={handleTecho}
                         />
-                        <label htmlFor="losa2" >2 Pendiente:</label>
+                        <label htmlFor="techo2" >2 Pendiente:</label>
                         <input
                             className="flex w-fit mx-auto"
                             type="radio"
                             id="techo2"
                             name='techo'
+                            value='opcion2'
+                            checked={techo==='opcion2'}
+                            onChange={handleTecho}
                         />
                     </div>
                 </div>

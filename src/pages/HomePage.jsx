@@ -11,8 +11,8 @@ import {
 function HomePage() {
   return (
     <>
-      <div className='flex flex-col items-center justify-center text-white bg-secondaryLight h-[75vh] min-h-fit'>
-        <div className="flex flex-col justify-center max-w-[80%]">
+      <div className='flex flex-col items-center justify-center text-white bg-secondaryLight h-[80vh] min-h-fit'>
+        <div className="flex flex-col justify-center max-w-[80%] mt-20">
           <div className="flex w-full flex-col md:flex-row">
             <div className="flex flex-col justify-center mt-5">
               <h1 className="text-3xl">Construye la casa de tus sueños</h1>

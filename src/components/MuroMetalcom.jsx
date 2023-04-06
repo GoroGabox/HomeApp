@@ -36,61 +36,84 @@ function MuroMetalcom({ancho, longitud, altura}) {
 
   return (
     <div>
-      <div className="flex justify-between mb-3 hover:cursor-pointer bg-[#dbdbdb] p-3" onClick={(e) => setShow(!show)}>
+      <div className="flex justify-between items-center mb-3 hover:cursor-pointer bg-[#dbdbdb] p-3" onClick={(e) => setShow(!show)}>
         <h2 className='text-xl'>Muros de metalcom:</h2>
-        <div>
+        <div className="text-3xl">
           {show?'-':'+'}
         </div>
       </div>
       {show&&
-      
-      <ul className='grid grid-cols-4 gap-1 border-solid border-blue-500 border-2'>
-        <li className="text-center flex justify-center">
-            <img src={canalUIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-center'>Canal U</li>
-        <li className='text-center'>{cantCanalU.toFixed(2)}</li>
-        <li className='text-center'>6m</li>
-        <li className="text-center flex justify-center">
-            <img src={canalCIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-center'>Canal C</li>
-        <li className='text-center'>{cantCanalC.toFixed(2)}</li>
-        <li className='text-center'>6m</li>
-        <li className="text-center flex justify-center">
-            <img src={maderaIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-sm text-center'>Panel OSB</li>
-        <li className='text-center'>{osb}</li>
-        <li className='text-center'>unidades</li>
-        <li className="text-center flex justify-center">
-            <img src={maderaIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-sm text-center'>Panel fibrocemento</li>
-        <li className='text-center'>{fibroCemento}</li>
-        <li className='text-center'>unidades</li>
-        <li className="text-center flex justify-center">
-            <img src={tornilloIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-sm text-center'>Tornillo Lenteja</li>
-        <li className='text-center'>{lenteja}</li>
-        <li className='text-center'>unidades</li>
-        <li className="text-center flex justify-center">
-            <img src={tornilloIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-sm text-center'>Tornillo Hexagonal</li>
-        <li className='text-center'>{hexagonal}</li>
-        <li className='text-center'>unidades</li>
-        <li className="text-center flex justify-center">
-            <img src={aceroIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-center'>Tensor</li>
-        <li className='text-center'>{tensor}</li>
-        <li className='text-center'>60m</li>
-      </ul>
+        <table className='table-auto border-solid border-blue-500 border-2 mx-auto w-full mb-10'>
+          <thead>
+            <tr>
+              <th className="text-center w-1/4"></th>
+              <th className='text-center'>Producto</th>
+              <th className='text-center'>Cantidad</th>
+              <th className='text-center'>Unidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-solid border-blue-500 border-2 border-collapse">
+              <td className="flex justify-center md:w-fit">
+                <img src={canalUIcon} alt="icono" className='w-1/4 md:w-1/12'/>
+              </td>
+              <td className='text-center'>Canal U</td>
+              <td className='text-center'>{cantCanalU.toFixed(2)}</td>
+              <td className='text-center'>6m</td>
+            </tr>
+            <tr className="border-solid border-blue-500 border-2 border-collapse">
+              <td className="flex justify-center md:w-fit">
+                <img src={canalCIcon} alt="icono" className='w-1/4 md:w-1/12'/>
+              </td>
+              <td className='text-center'>Canal C</td>
+              <td className='text-center'>{cantCanalC.toFixed(2)}</td>
+              <td className='text-center'>6m</td>
+            </tr>
+            <tr className="border-solid border-blue-500 border-2 border-collapse">
+              <td className="flex justify-center md:w-fit">
+                <img src={maderaIcon} alt="icono" className='w-1/4 md:w-1/12'/>
+              </td>
+              <td className='text-sm text-center'>OSB</td>
+              <td className='text-center'>{osb}</td>
+              <td className='text-center'>unidades</td>
+            </tr>
+            <tr className="border-solid border-blue-500 border-2 border-collapse">
+              <td className="flex justify-center md:w-fit">
+                <img src={maderaIcon} alt="icono" className='w-1/4 md:w-1/12'/>
+              </td>
+              <td className='text-sm text-center'>Fibrocemento</td>
+              <td className='text-center'>{fibroCemento}</td>
+              <td className='text-center'>unidades</td>
+            </tr>
+            <tr className="border-solid border-blue-500 border-2 border-collapse">
+              <td className="flex justify-center md:w-fit">
+                <img src={tornilloIcon} alt="icono" className='w-1/4 md:w-1/12'/>
+              </td>
+              <td className='text-sm text-center'>T. Lenteja</td>
+              <td className='text-center'>{lenteja}</td>
+              <td className='text-center'>unidades</td>
+            </tr>
+            <tr className="border-solid border-blue-500 border-2 border-collapse">
+              <td className="flex justify-center md:w-fit">
+                <img src={tornilloIcon} alt="icono" className='w-1/4 md:w-1/12'/>
+              </td>
+              <td className='text-sm text-center'>T. Hexagonal</td>
+              <td className='text-center'>{hexagonal}</td>
+              <td className='text-center'>unidades</td>
+            </tr>
+            <tr className="border-solid border-blue-500 border-2 border-collapse">
+              <td className="flex justify-center md:w-fit">
+                <img src={aceroIcon} alt="icono" className='w-1/4 md:w-1/12'/>
+              </td>
+              <td className='text-center'>Tensor</td>
+              <td className='text-center'>{tensor}</td>
+              <td className='text-center'>60m</td>
+            </tr>
+          </tbody>
+        </table>
       }
     </div>
-  );
-}
+  )
+};
 
 export default MuroMetalcom;

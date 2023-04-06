@@ -1,51 +1,133 @@
-import React, {useContext} from 'react'
+import React, {useContext,useEffect, useState } from 'react'
 import {Link} from 'react-router-dom';
 import AuthContext from '../context/AuthContext'
+import { menu, close, logo } from '../assets/images/images';
+
+const navLinks = [
+  {
+    id: "calculator",
+    title: "Calculadora",
+  },
+  {
+    id: "login",
+    title: "Ingresa",
+  },
+  {
+    id: "register",
+    title: "Registrate",
+  },
+];
+
+const styles = {
+  paddingX: "sm:px-16 px-6",
+  paddingY: "sm:py-16 py-6",
+  padding: "sm:px-16 px-6 sm:py-16 py-10",
+
+  heroHeadText:
+    "font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2",
+  heroSubText:
+    "text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]",
+
+  sectionHeadText:
+    "text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
+  sectionSubText:
+    "sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider",
+};
 
 function Navbar() {
+  
   let {user, logout} = useContext(AuthContext)
 
+  const [active, setActive] = useState("");
+  const [toggle, setToggle] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className='flex justify-between items-center bg-primary text-white h-[10vh]'>
-      <div className="w-[60%] flex justify-around">
+    <nav
+      className={`${
+        styles.paddingX
+      } w-full flex items-center py-5 fixed top-0 z-20 ${
+        scrolled ? "bg-black" : "bg-transparent"
+      }`}
+    >
+      <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link
-            to='/'
-            className='flex'
+          to='/'
+          className='flex items-center gap-2'
+          onClick={() => {
+            setActive("");
+            window.scrollTo(0, 0);
+          }}
         >
-          Home
+          <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
+          <p className='text-white text-[18px] font-bold cursor-pointer flex '>
+            Home &nbsp;
+            <span className='sm:block hidden'> | App</span>
+          </p>
         </Link>
-        <Link
-            to='/calculator'
-            className='flex'
-        >
-          Calculator
-        </Link>
-      </div>
-      <div className="w-[60%] flex gap-10 justify-end mr-4">
-        {user?
-        <>
-          <div>Hello {user.name}</div>
-          <div className='cursor-pointer' onClick={logout}>Log out</div>
-        </>
-        :
-        <>
-          <Link
-              to='/login'
-              className='flex'
+
+        <ul className='list-none hidden sm:flex flex-row gap-10'>
+          {navLinks.map((nav) => (
+            <li
+              key={nav.id}
+              className={`${
+                active === nav.title ? "text-white" : "text-secondary"
+              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              onClick={() => setActive(nav.title)}
+            >
+              <a href={`${nav.id}`}>{nav.title}</a>
+            </li>
+          ))}
+        </ul>
+
+        <div className='sm:hidden sm:flex-row-reverse flex flex-1 justify-end items-center'>
+          <img
+            src={toggle ? close : menu}
+            alt='menu'
+            className='w-[28px] h-[28px] object-contain'
+            onClick={() => setToggle(!toggle)}
+          />
+
+          <div
+            className={`${
+              !toggle ? "hidden" : "flex"
+            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl bg-primary`}
           >
-            Login
-          </Link>
-          <Link
-              to='/register'
-              className='flex'
-          >
-            Register
-          </Link>
-        </>
-        }
+            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
+              {navLinks.map((nav) => (
+                <li
+                  key={nav.id}
+                  className={`font-poppins font-medium cursor-pointer text-[16px] text-white`}
+                  onClick={() => {
+                    setToggle(!toggle);
+                    setActive(nav.title);
+                  }}
+                >
+                  <a href={`${nav.id}`}>{nav.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        
       </div>
-    </div>
-  )
+    </nav>
+  );
 }
 
 export default Navbar

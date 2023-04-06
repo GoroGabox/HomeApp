@@ -4,6 +4,7 @@ import LosaCemento from "./LosaCemento";
 import CercoPostes from "./CercoPostes";
 import MuroMetalcom from "./MuroMetalcom";
 import MuroMadera from "./MuroMadera";
+import MuroLadrillo from "./MuroLadrillo";
 import TechoDobleMetalcom from "./TechoDobleMetalcom";
 import TechoSimpleMetalcom from "./TechoSimpleMetalcom";
 import Footer from "./Footer";
@@ -17,6 +18,7 @@ export {
     CercoPostes,
     MuroMetalcom,
     MuroMadera,
+    MuroLadrillo,
     TechoDobleMetalcom,
     TechoSimpleMetalcom,
     Footer,

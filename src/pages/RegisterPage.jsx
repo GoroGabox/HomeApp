@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 function RegisterPage() {
   return (
     <div className=' bg-gray-200 h-fit grid place-content-center'>
-      <div className="grid grid-cols-1 place-items-center place-content-center gap-8 md:w-[800px] mb-10">
+      <div className="grid grid-cols-1 place-items-center place-content-center gap-8 md:w-[800px] mb-10 mt-20">
         <h2 className='text-3xl mt-10'>Crea una cuenta</h2>
         <label htmlFor="" className='flex w-full justify-between'>
           Nombre:

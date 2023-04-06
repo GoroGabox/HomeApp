@@ -1,21 +1,7 @@
-import { pow, sqrt } from 'mathjs';
 import React, { useState } from 'react';
 import {
-  aceroIcon,
-  aguaIcon,
-  amiantoIcon,
-  arenaIcon,
-  canalCIcon,
-  canalUIcon,
-  cementoIcon,
-  columnaIcon,
-  concretoIcon,
-  hormigonIcon,
   maderaIcon,
-  mallaIcon,
-  piedraIcon,
   tableroIcon,
-  techoIcon,
   tornilloIcon
 } from '../assets/icons'
 
@@ -48,52 +34,67 @@ function MuroMadera({ancho, longitud, altura}) {
 
   return (
     <div>
-      <div className="flex justify-between mb-3 hover:cursor-pointer bg-[#dbdbdb] p-3" onClick={(e) => setShow(!show)}>
+      <div className="flex justify-between items-center mb-3 hover:cursor-pointer bg-[#dbdbdb] p-3" onClick={(e) => setShow(!show)}>
         <h2 className='text-xl'>Muros de madera:</h2>
-        <div>
+        <div className="text-3xl">
             {show?'-':'+'}
         </div>
       </div>
       {show&&
       
-      <ul className='grid grid-cols-4 gap-1 border-solid border-blue-500 border-2'>
-        <li className="text-center flex justify-center">
-            <img src={tableroIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-center'>Palo seco 2x2</li>
-        <li className='text-center'>{cantVert}</li>
-        <li className='text-center'>3m</li>
-        <li className="text-center flex justify-center">
-            <img src={tableroIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-center'>Palo seco 2x4</li>
-        <li className='text-center'>{cantHorz}</li>
-        <li className='text-center'>3m</li>
-        <li className="text-center flex justify-center">
-            <img src={maderaIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-center'>Panel OSB</li>
-        <li className='text-center'>{osb}</li>
-        <li className='text-center'>unidades</li>
-        <li className="text-center flex justify-center">
-            <img src={maderaIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-center'>Panel fibrocemento</li>
-        <li className='text-center'>{fibroCemento}</li>
-        <li className='text-center'>unidades</li>
-        <li className="text-center flex justify-center">
-            <img src={tornilloIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-center'>Clavos 4</li>
-        <li className='text-center'>{clavo}</li>
-        <li className='text-center'>unidades</li>
-        <li className="text-center flex justify-center">
-            <img src={tornilloIcon} alt="icono" className='w-1/4'/>
-        </li>
-        <li className='text-center'>Tornillo fijacion</li>
-        <li className='text-center'>{fijacion}</li>
-        <li className='text-center'>unidades</li>
-      </ul>
+      <>
+          <div className="flex flex-col mb-8">
+            <p className='text-sm text-gray-700'>Razon:1/2/3</p>
+          </div>
+          <table className="table-auto border-solid border-blue-500 border-2 mx-auto w-full mb-10">
+            <thead>
+              <tr>
+                <th className="text-center w-1/4">Icono</th>
+                <th className="text-center">Material</th>
+                <th className="text-center">Cantidad</th>
+                <th className="text-center">Unidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-solid border-blue-500 border-2 border-collapse">
+                <td className="flex justify-center md:w-fit"><img src={maderaIcon} alt="icono" className='w-1/4 md:w-1/12'/></td>
+                <td className="text-center">Palo 2x2</td>
+                <td className="text-center">{cantVert}</td>
+                <td className="text-center">3m</td>
+              </tr>
+              <tr className="border-solid border-blue-500 border-2 border-collapse">
+                <td className="flex justify-center md:w-fit"><img src={maderaIcon} alt="icono" className='w-1/4 md:w-1/12'/></td>
+                <td className="text-center">Palo 2x4</td>
+                <td className="text-center">{cantHorz}</td>
+                <td className="text-center">3m</td>
+              </tr>
+              <tr className="border-solid border-blue-500 border-2 border-collapse">
+                <td className="flex justify-center md:w-fit"><img src={tableroIcon} alt="icono" className='w-1/4 md:w-1/12'/></td>
+                <td className="text-center">OSB</td>
+                <td className="text-center">{osb}</td>
+                <td className="text-center">unidades</td>
+              </tr>
+              <tr className="border-solid border-blue-500 border-2 border-collapse">
+                <td className="flex justify-center md:w-fit"><img src={tableroIcon} alt="icono" className='w-1/4 md:w-1/12'/></td>
+                <td className="text-center">Fibrocemento</td>
+                <td className="text-center">{fibroCemento}</td>
+                <td className="text-center">unidades</td>
+              </tr>
+              <tr className="border-solid border-blue-500 border-2 border-collapse">
+                <td className="flex justify-center md:w-fit"><img src={tornilloIcon} alt="icono" className='w-1/4 md:w-1/12'/></td>
+                <td className="text-center">Clavos 4'</td>
+                <td className="text-center">{clavo}</td>
+                <td className="text-center">unidades</td>
+              </tr>
+              <tr className="border-solid border-blue-500 border-2 border-collapse">
+                <td className="flex justify-center md:w-fit"><img src={tornilloIcon} alt="icono" className='w-1/4 md:w-1/12'/></td>
+                <td className="text-center">T. Fijacion</td>
+                <td className="text-center">{fijacion}</td>
+                <td className="text-center">unidades</td>
+              </tr>
+            </tbody>
+          </table>
+        </>
       }
     </div>
   );

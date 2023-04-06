@@ -18,6 +18,7 @@ import piedraIcon from './piedra.png'
 import tableroIcon from './tablero.png'
 import techoIcon from './techo.png'
 import tornilloIcon from './tornillo.png'
+import ladrilloIcon from './ladrillo.png'
 
 
 export {
@@ -41,5 +42,6 @@ export {
     piedraIcon,
     tableroIcon,
     techoIcon,
-    tornilloIcon
+    tornilloIcon,
+    ladrilloIcon,
 }

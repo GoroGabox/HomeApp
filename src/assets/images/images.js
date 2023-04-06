@@ -5,6 +5,9 @@ import logImg from './log.jpg';
 import woodImg from './wood.png';
 import lightConcreteImg from './light-gray-concrete-wall.jpg'
 import zincImg from './zinc.jpg'
+import menu from "./menu.webp";
+import close from "./close.webp";
+import logo from "./logo-36.webp";
 
 export {
 	dirtImg,
@@ -14,4 +17,7 @@ export {
 	logImg,
 	lightConcreteImg,
 	zincImg,
+	menu, 
+	close,
+	logo
 }
