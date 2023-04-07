@@ -20,7 +20,7 @@ const navLinks = [
 
 function Navbar() {
   
-  let {user, logout} = useContext(AuthContext)
+  let {user, logoutUser} = useContext(AuthContext)
 
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);

@@ -8,6 +8,7 @@ import zincImg from './zinc.jpg'
 import menu from "./menu.webp";
 import close from "./close.webp";
 import logo from "./logo-36.webp";
+import calculadora from './calculadora.jpg'
 
 export {
 	dirtImg,
@@ -19,5 +20,6 @@ export {
 	zincImg,
 	menu, 
 	close,
-	logo
+	logo,
+	calculadora,
 }

@@ -8,21 +8,20 @@ import {
   listaIcon,
 } from '../assets/icons'
 
+import { calculadora } from '../assets/images/images'
+
 function HomePage() {
   return (
     <>
       <div className='flex flex-col items-center justify-center text-white bg-secondaryLight h-[80vh] min-h-fit'>
-        <div className="flex flex-col justify-center max-w-[80%] mt-20">
-          <div className="flex w-full flex-col md:flex-row">
-            <div className="flex flex-col justify-center mt-5">
-              <h1 className="text-3xl">Construye la casa de tus sueños</h1>
-              <h2 className="">Calcula los materiales necesarios para construir tu casa en cuestión de minutos</h2>
+        <div className="flex flex-col justify-center mt-20 w-[80%] h-[70%]">
+          <div className="flex w-full h-full flex-col md:flex-row items-center justify-around">
+            <div className="flex flex-col justify-center md:w-2/3">
+              <h1 className="text-3xl">Cálculo de materiales de construcción</h1>
+              <h2 className="mt-5">Sistema de calculo automatizado.<br/> Diseña y obten informacion inmediata sobre tu proyecto.</h2>
             </div>
-            <div className="h-[300px]">
-              <SketchsCanvas/>
-            </div>
+            <Link to='/calculator' className='text-center bg-tertiary px-4 py-3 h-fit md:w-1/3 w-full'>Calcula Ahora!</Link>
           </div>
-          <Link to='/calculator' className='text-center rounded-full bg-tertiary px-4 py-2 md:w-fit'>Calcula Ahora!</Link>
         </div>
       </div>
       <div className="mt-5 flex flex-col items-center">

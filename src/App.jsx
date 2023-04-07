@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import { Navbar, Footer, PDF} from './components';
-import { RegisterPage, LoginPage, HomePage, CalculatorPage, ListPage, GuidePage } from './pages';
+import { Navbar, Footer} from './components';
+import { RegisterPage, LoginPage, HomePage, CalculatorPage, ListPage, GuidePage, ProfilePage } from './pages';
 import { AuthProvider } from "./context/AuthContext";
 import { CalculatorProvider } from './context/CalculatorContext';
 
@@ -14,6 +14,7 @@ function App() {
             <Route path='/' element={<HomePage/>}/>
             <Route path='/login' element={<LoginPage/>}/>
             <Route path='/register' element={<RegisterPage/>}/>
+            <Route path='/profile' element={<ProfilePage/>}/>
             <Route path="/calculator/*"
               element={
                 <CalculatorProvider>

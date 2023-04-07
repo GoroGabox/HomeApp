@@ -5,6 +5,7 @@ import PlansPage from "./PlansPage";
 import CalculatorPage from "./CalculatorPage";
 import ListPage from "./ListPage";
 import GuidePage from "./GuidePage";
+import ProfilePage from "./ProfilePage"
 
 export {
     LoginPage,
@@ -13,5 +14,6 @@ export {
     PlansPage,
     CalculatorPage,
     ListPage,
-    GuidePage
+    GuidePage,
+    ProfilePage,
 }

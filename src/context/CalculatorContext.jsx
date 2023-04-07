@@ -49,14 +49,7 @@ export const CalculatorProvider = ({children}) => {
     const calcularMateriales = (ancho, longitud, altura, material, tipoTecho) => {
         setAnchoFinal(ancho)
         setLongitudFinal(longitud)
-        setAlturaFinal(altura) 
-
-        if (material==='opcion1') {calcularMetal()}
-        if (material==='opcion2') {calcularMadera()}
-        else{calcularLadrillo()}
-
-        if (tipoTecho==='opcion1') {calcularUnaPendiente()}
-        else{calcularDosPendiente()}
+        setAlturaFinal(altura)
     };
 
     let contextData ={

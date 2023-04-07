@@ -36,7 +36,7 @@ function TechoSimpleMetalcom({ancho, longitud}) {
   const longitudCuerda = menor
   const razonAltura = 1/4
   const altura = longitudCuerda * razonAltura
-  const cantCerchas = Math.ceil(ladoMayor(ancho, longitud)/1.2)
+  const cantCerchas = Math.ceil(ladoMayor(ancho, longitud)/1.2)+1
   const diagonal = sqrt((pow(altura,2)+pow(longitudCuerda+alero,2)))
   
   //construir cercha

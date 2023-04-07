@@ -1,8 +1,7 @@
 import React, { useRef, useMemo } from "react"
 import { useGLTF } from "@react-three/drei";
-import { zincTexture } from "../../assets/images/textures";
 
-function Cercha({ancho, ubicacion, altura}) {
+function Cercha({ancho, ubicacion, altura, ladoMenor}) {
 
     const {scene} = useGLTF("./cercha/cercha.glb");
     const copia = useMemo(() => scene.clone(), [scene])
@@ -12,7 +11,8 @@ function Cercha({ancho, ubicacion, altura}) {
     return (
             <mesh
                 ref={mesh}
-                position={[0,altura/2,ubicacion]}
+                position={ladoMenor!=ancho?[ubicacion,altura/2,0]:[0,altura/2,ubicacion]}
+                rotation={ladoMenor!=ancho?[0,Math.PI/2,0]:[0,0,0]}
             >
                 <hemisphereLight intensity={0.15} groundColor='black' />
                 <spotLight
@@ -35,7 +35,7 @@ function Cercha({ancho, ubicacion, altura}) {
 
                 <primitive
                     object={copia}
-                    scale={[ancho*5/12,ancho/10,1]}
+                    scale={[ladoMenor*5/12,ladoMenor/10,1]}
                 />
             </mesh>
     ) 

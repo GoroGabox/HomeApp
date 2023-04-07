@@ -1,5 +1,4 @@
 import Scene from "./Scene";
-import Ground from "./Ground";
 import House from "./House";
 import Losa from "./Losa";
 import Muros from "./Muros";
@@ -9,7 +8,6 @@ import Avatars from "./Avatar";
 
 export {
     Scene,
-    Ground,
     House,
     Losa,
     Muros,

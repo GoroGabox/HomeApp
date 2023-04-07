@@ -10,6 +10,9 @@ import TechoSimpleMetalcom from "./TechoSimpleMetalcom";
 import Footer from "./Footer";
 import PanelControl from "./PanelControl";
 import PDF from "./PDF";
+import Task from "./task";
+import TaskForm from "./taskForm";
+import TaskList from "./taskList";
 
 export {
     Navbar,
@@ -23,5 +26,8 @@ export {
     TechoSimpleMetalcom,
     Footer,
     PanelControl,
-    PDF
+    PDF,
+    Task,
+    TaskForm,
+    TaskList,
 }
