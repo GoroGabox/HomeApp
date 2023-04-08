@@ -2,7 +2,8 @@ import Scene from "./Scene";
 import House from "./House";
 import Losa from "./Losa";
 import Muros from "./Muros";
-import Cercha from "./Cercha";
+import {CerchaSimple} from "./Cercha";
+import {CerchaDoble} from "./Cercha";
 import SketchsCanvas from "./Sketch";
 import Avatars from "./Avatar";
 
@@ -11,7 +12,8 @@ export {
     House,
     Losa,
     Muros,
-    Cercha,
+    CerchaSimple,
+    CerchaDoble,
     SketchsCanvas,
     Avatars,
 }

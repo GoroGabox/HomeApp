@@ -1,13 +1,13 @@
 import React, { useMemo, useContext } from "react"
 import Losa from "./Losa"
 import Muros from "./Muros"
-import Cercha from "./Cercha"
+import {CerchaSimple, CerchaDoble} from "./Cercha"
 import { woodTexture, zincTexture } from "../../assets/images/textures"
 import CalculatorContext  from "../../context/CalculatorContext";
 
 const House = ({ancho, longitud, altura}) => {
 
-	let {material} = useContext(CalculatorContext)
+	let {material, techo} = useContext(CalculatorContext)
 
 	let textura
 	if (material==='opcion1') {textura=zincTexture}
@@ -26,18 +26,27 @@ const House = ({ancho, longitud, altura}) => {
 
 	const numCerchas = (Math.floor(ladoMayor))/2;
 
-	const cerchas = useMemo(() => {
+	const cerchasSimples = useMemo(() => {
         const result = [];
         for (let i = -numCerchas; i <= numCerchas; i++) {
             const ubicacion = i;
-            result.push(<Cercha ancho={ancho} ubicacion={ubicacion} altura={altura} key={i} ladoMenor={ladoMenor}/>);
+            result.push(<CerchaSimple ancho={ancho} ubicacion={ubicacion} altura={altura} key={i} ladoMenor={ladoMenor}/>);
+        }
+        return result;
+    }, [ancho, longitud, altura, numCerchas]);
+
+	const cerchasDobles = useMemo(() => {
+        const result = [];
+        for (let i = -numCerchas; i <= numCerchas; i++) {
+            const ubicacion = i;
+            result.push(<CerchaDoble ancho={ancho} ubicacion={ubicacion} altura={altura} key={i} ladoMenor={ladoMenor}/>);
         }
         return result;
     }, [ancho, longitud, altura, numCerchas]);
 
 	return (
 		<>	
-			{cerchas}
+			{techo==='opcion1' ? cerchasSimples: cerchasDobles}
 			<Muros ancho={ancho} longitud={longitud} altura={altura} textura={textura}/>
 			<Losa ancho={ancho} longitud={longitud} altura={altura}/>
 		</>
