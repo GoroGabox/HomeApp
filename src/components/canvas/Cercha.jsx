@@ -1,4 +1,5 @@
 import React, { useRef, useMemo } from "react"
+import { techoZincTexture } from "../../assets/images/textures"
 
 function mapLengthToRange(l, rangeMin, rangeMax) {
     const lengthMin = 0;
@@ -8,39 +9,50 @@ function mapLengthToRange(l, rangeMin, rangeMax) {
     return range;
   }
 
+const hipotenusa = Math.sqrt(1**2 + 1**2);
 
-export function LadoA({ ubicacion, altura }) {
+function LadoA({ ubicacion, altura, textura }) {
     return (
       <>
             <mesh position={[ubicacion, -0.5+altura/2, 0]} scale={[.01, altura, 1]}>
             <boxGeometry args={[1, 1, 1]} />
-            <meshBasicMaterial  color="green"/>
+            <meshBasicMaterial map={textura}/>
             </mesh>
       </>
     );
   }
 
-export function LadoB({ textura }) {
+function LadoB({ textura }) {
     return (
         <>
             <mesh position={[0, -0.5, 0]} scale={[1, 0.01, 1]}>
                 <boxGeometry args={[1, 1, 1]} />
-                <meshBasicMaterial color="green" />
+                <meshBasicMaterial map={textura} />
             </mesh>
         </>
     );
 }
 
-export function LadoC({ textura }) {
-    const hipotenusa = Math.sqrt(1**2 + 1**2);
+function LadoC({ textura }) {
     return (
         <>
             <mesh position={[0, 0, 0]} scale={[.01,hipotenusa, 1]} rotation={[0,0,(Math.PI)/4]} >
                 <boxGeometry args={[1, 1, 1]} />
-                <meshBasicMaterial  color="green" wireframe={false} />
+                <meshBasicMaterial map={textura} wireframe={false} />
             </mesh>
         </>
     );
+}
+
+function Omega({ textura }) {
+  return (
+      <>
+          <mesh position={[0, 0.001, 0]} scale={[.01,hipotenusa, 10]} rotation={[0,0,(Math.PI)/4]} >
+              <boxGeometry args={[1, 1, 1]} />
+              <meshBasicMaterial map={textura} wireframe={false} />
+          </mesh>
+      </>
+  );
 }
 
 export function CerchaSimple({ ladoMenor, altura, textura, ancho, ubicacion}) {
@@ -63,14 +75,15 @@ export function CerchaSimple({ ladoMenor, altura, textura, ancho, ubicacion}) {
       <>
         <mesh 
             position={ladoMenor!=ancho?[ubicacion,(altura/2)+(ladoMenor/8),0]:[0,(altura/2)+(ladoMenor/8),ubicacion]}
-            rotation={ladoMenor!=ancho?[0,Math.PI/2,0]:[0,0,0]}
+            rotation={ladoMenor!=ancho?[0,Math.PI/2,0]:[0,(Math.PI),0]}
             scale={[ladoMenor,ladoMenor/4,.1]}
         >
             <boxGeometry args={[1, 1, 1]} />
             <meshBasicMaterial visible={false}/>
             {pilares}
-            <LadoB/>
-            <LadoC/>
+            <LadoB textura={textura}/>
+            <LadoC textura={textura}/>
+            <Omega textura={techoZincTexture}/>
         </mesh>
       </>
     );
@@ -97,24 +110,26 @@ export function CerchaDoble({ ladoMenor, altura, textura, ancho, ubicacion}) {
         <mesh 
             position={ladoMenor!=ancho?[ubicacion,(altura/2)+(ladoMenor/8),(ladoMenor/2)-(ladoMenor/4)]:[(ladoMenor/2)-(ladoMenor/4),(altura/2)+(ladoMenor/8),ubicacion]}
             rotation={ladoMenor!=ancho?[0,-Math.PI/2,0]:[0,0,0]}
-            scale={[ladoMenor/2,ladoMenor/4,.1]}
+            scale={[(ladoMenor/2),ladoMenor/4,.1]}
         >
             <boxGeometry args={[1, 1, 1]} />
             <meshBasicMaterial visible={false}/>
             {pilares}
-            <LadoB/>
-            <LadoC/>
+            <LadoB textura={textura}/>
+            <LadoC textura={textura}/>
+            <Omega textura={techoZincTexture}/>
         </mesh>
         <mesh 
             position={ladoMenor!=ancho?[ubicacion,(altura/2)+(ladoMenor/8),(-ladoMenor/2)+(ladoMenor/4)]:[(-ladoMenor/2)+(ladoMenor/4),(altura/2)+(ladoMenor/8),ubicacion]}
             rotation={ladoMenor!=ancho?[0,Math.PI/2,0]:[0,Math.PI,0]}
-            scale={[ladoMenor/2,ladoMenor/4,.1]}
+            scale={[(ladoMenor/2),ladoMenor/4,.1]}
         >
             <boxGeometry args={[1, 1, 1]} />
             <meshBasicMaterial visible={false}/>
             {pilares}
-            <LadoB/>
-            <LadoC/>
+            <LadoB textura={textura}/>
+            <LadoC textura={textura}/>
+            <Omega textura={techoZincTexture}/>
         </mesh>
       </>
     );
